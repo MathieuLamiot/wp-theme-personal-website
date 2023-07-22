@@ -162,7 +162,7 @@ if (!function_exists('business_insights_save_theme_settings_meta')) :
         }
 
         // Check the post being saved == the $post_id to prevent triggering this call for other save_post events.
-        if ( isset($_POST['post_ID']) || empty($_POST['post_ID']) || sanitize_text_field( wp_unslash( $_POST['post_ID'] ) ) != $post_id) {
+        if ( !isset($_POST['post_ID']) || empty($_POST['post_ID']) || sanitize_text_field( wp_unslash( $_POST['post_ID'] ) ) != $post_id) {
             return;
         }
 
