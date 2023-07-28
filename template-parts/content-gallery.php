@@ -21,18 +21,18 @@
         <?php if (!is_single()) { ?>
         <div class="twp-business-article secondary-bgcolor">
             <header class="article-header">
+                <h2 class="entry-title">
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                </h2>
                 <div class="post-category secondary-font">
                     <span class="meta-span">
                         <?php business_insights_entry_category(); ?>
                     </span>
                 </div>
-                <h2 class="entry-title">
-                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                </h2>
-
                 <div class="entry-meta text-uppercase">
                     <?php business_insights_posted_details(); ?>
                 </div><!-- .entry-meta -->
+
             </header>
             <?php if (has_post_thumbnail()) { ?>
             <div class="entry-content">

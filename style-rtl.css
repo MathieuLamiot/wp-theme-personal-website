@@ -419,8 +419,8 @@ input[type="submit"]:focus-within {
     color: #fff;
 }
 button, input[type="button"], input[type="reset"], input[type="submit"] {
-    background: #9492f5;
-    border: 1px solid #9492f5;
+    background: #81a7ff;
+    border: 1px solid #81a7ff;
     color: #fff;
 }
 .btn-link:link,
@@ -3454,7 +3454,7 @@ nav.navigation.pagination {
 .btn-link-primary,
 .twp-testimonial .owl-dots .owl-dot.active span,
 .twp-testimonial .owl-dots .owl-dot:hover span {
-    background: #9492f5;
+    background: #81a7ff;
     color: #fff;
 }
 .site-description,
@@ -3472,23 +3472,23 @@ input[type="submit"]:focus {
 }
 .btn-link:link:hover,
 .btn-link:visited:hover {
-    color: #9492f5;
+    color: #81a7ff;
 }
 .btn-link,
 .item-block:hover,
 .item-block:focus {
-    border-color: #9492f5;
+    border-color: #81a7ff;
 }
 @media only screen and (min-width: 992px) {
     .main-navigation .menu > ul > li:hover > a,
     .main-navigation .menu > ul > li:focus > a,
     .main-navigation .menu > ul > li.current-menu-item > a {
-        color: #9492f5;
+        color: #81a7ff;
     }
     .main-navigation .menu > ul > li:hover > a:after,
     .main-navigation .menu > ul > li:focus > a:after,
     .main-navigation .menu > ul > li.current-menu-item > a:after {
-        background: #9492f5;
+        background: #81a7ff;
     }
 }
 .primary-bgcolor a,
@@ -3670,7 +3670,7 @@ a.skip-link-menu-end, a.skip-link-menu-start-2 {
     display: block;
 }
 body .site .wpforms-container-full .wpforms-form button[type=submit] {
-    background-color: #9492f5;
+    background-color: #81a7ff;
     border: 0;
     color: #fff;
     font-size: 16px;
@@ -3680,7 +3680,7 @@ body .site .wpforms-container-full .wpforms-form button[type=submit] {
 }
 body .site .wpforms-container-full .wpforms-form button[type=submit]:hover,
 body .site .wpforms-container-full .wpforms-form button[type=submit]:focus {
-    background-color: #9492f5;
+    background-color: #81a7ff;
     border: 0;
     filter: alpha(opacity=70);
     opacity: 0.7;

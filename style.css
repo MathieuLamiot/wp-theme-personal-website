@@ -239,11 +239,11 @@ button,
 input,
 select,
 textarea {
-    font-family: 'Heebo', sans-serif;
-    color: #666;
-    font-size: 15px;
+    font-family: 'Source Sans Pro','Helvetica','Arial','sans-serif';
+    color: #3d3d3d;
+    letter-spacing: .3px;
     line-height: 1.6;
-    font-weight: 400;
+    font-size: 1.25rem;
 }
 h1, h2, h3, h4, h5, h6,
 .main-navigation a {
@@ -419,8 +419,8 @@ input[type="submit"]:focus-within {
     color: #fff;
 }
 button, input[type="button"], input[type="reset"], input[type="submit"] {
-    background: #9492f5;
-    border: 1px solid #9492f5;
+    background: #5a7fd5;
+    border: 1px solid #5a7fd5;
     color: #fff;
 }
 .btn-link:link,
@@ -581,7 +581,7 @@ td:last-child {
 ## Links
 --------------------------------------------------------------*/
 a {
-    color: #434343;
+    color: #000;
     text-decoration: none;
 }
 a:hover,
@@ -1678,19 +1678,19 @@ a:focus-visible {
 @media (min-width: 768px) {
     .site-content,
     .home.blog .site-content {
-        width: 750px;
+        width: 700px;
     }
 }
 @media (min-width: 992px) {
     .site-content,
     .home.blog .site-content {
-        width: 970px;
+        width: 850;
     }
 }
 @media (min-width: 1200px) {
     .site-content,
     .home.blog .site-content {
-        width: 1170px;
+        width: 1000px;
     }
 }
 .home.page-template-front-page-template .site-content {
@@ -1812,7 +1812,7 @@ body .inner-banner {
     position: relative;
 }
 body .inner-banner a {
-    color: #ff8eb9;
+    color: #5a7fd5;
 }
 body .inner-banner-img {
     width: 100%;
@@ -1956,7 +1956,7 @@ body .inner-banner-img {
     padding: 0;
     line-height: 1.4;
     letter-spacing: 3px;
-    margin: 10px auto;
+    margin: auto;
     position: relative;
 }
 .entry-title-1 {
@@ -2041,11 +2041,12 @@ span.comments-link {
     width: 100%;
 }
 .twp-business-article {
-    padding: 40px 50px;
+    border-top: 1px solid;
+    padding: 10px 20px;
     margin-bottom: 170px;
 }
 .content-no-image .twp-business-article {
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 }
 .twp-business-article .article-header {
     padding: 20px 4px 30px;
@@ -2067,7 +2068,7 @@ span.comments-link {
 }
 .site-content .twp-business-article .entry-content .twp-content-image a {
     display: block;
-    margin-bottom: -150px;
+    margin-bottom: 0px;
     width: auto;
     border: 4px solid #f4f4f4;
     padding: 20px;
@@ -2822,6 +2823,8 @@ body .widget.business_insights_popular_post_widget ul li {
 .twp-slider-wrapper {
     overflow: hidden;
     clear: both;
+    width: 80%;
+    margin: auto;
 }
 .twp-slider-wrapper .owl-carousel .owl-stage-outer {
     overflow: visible
@@ -2839,7 +2842,7 @@ body .widget.business_insights_popular_post_widget ul li {
 }
 .single-slide {
     background-color: #24282e;
-    height: 600px;
+    height: 450px;
     overflow: hidden;
     position: relative;
 }
@@ -2937,7 +2940,7 @@ body .widget.business_insights_popular_post_widget ul li {
 .slide-text {
     height: 100%;
     position: absolute;
-    padding-left: 15px;
+    padding-left: 60px;
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
@@ -3456,7 +3459,7 @@ nav.navigation.pagination {
 .btn-link-primary,
 .twp-testimonial .owl-dots .owl-dot.active span,
 .twp-testimonial .owl-dots .owl-dot:hover span {
-    background: #9492f5;
+    background: #5a7fd5;
     color: #fff;
 }
 .site-description,
@@ -3474,23 +3477,23 @@ input[type="submit"]:focus {
 }
 .btn-link:link:hover,
 .btn-link:visited:hover {
-    color: #9492f5;
+    color: #5a7fd5;
 }
 .btn-link,
 .item-block:hover,
 .item-block:focus {
-    border-color: #9492f5;
+    border-color: #5a7fd5;
 }
 @media only screen and (min-width: 992px) {
     .main-navigation .menu > ul > li:hover > a,
     .main-navigation .menu > ul > li:focus > a,
     .main-navigation .menu > ul > li.current-menu-item > a {
-        color: #9492f5;
+        color: #5a7fd5;
     }
     .main-navigation .menu > ul > li:hover > a:after,
     .main-navigation .menu > ul > li:focus > a:after,
     .main-navigation .menu > ul > li.current-menu-item > a:after {
-        background: #9492f5;
+        background: #5a7fd5;
     }
 }
 .primary-bgcolor a,
@@ -3512,22 +3515,22 @@ h6.primary-bgcolor,
     color: #000;
 }
 .secondary-bgcolor {
-    background: #f4f4f4;
+    background: #ffffff;
 }
 .btn-link-secondary {
-    background: #ff8eb9;
+    background: #5a7fd5;
 }
 .btn-link-secondary:link:hover,
 .btn-link-secondary:visited:hover,
 .section-contact .social-icons ul li:hover a:after,
 .section-contact .social-icons ul li:focus a:after {
-    color: #ff8eb9;
+    color: #5a7fd5;
 }
 .btn-link-secondary,
 .center-widget-title.widget-title:after,
 .section-title:after,
 .intro-wrapper:after {
-    border-color: #ff8eb9;
+    border-color: #5a7fd5;
 }
 .inner-heading,
 .block-text {
@@ -3672,7 +3675,7 @@ a.skip-link-menu-end, a.skip-link-menu-start-2 {
     display: block;
 }
 body .site .wpforms-container-full .wpforms-form button[type=submit] {
-    background-color: #9492f5;
+    background-color: #5a7fd5;
     border: 0;
     color: #fff;
     font-size: 16px;
@@ -3682,7 +3685,7 @@ body .site .wpforms-container-full .wpforms-form button[type=submit] {
 }
 body .site .wpforms-container-full .wpforms-form button[type=submit]:hover,
 body .site .wpforms-container-full .wpforms-form button[type=submit]:focus {
-    background-color: #9492f5;
+    background-color: #5a7fd5;
     border: 0;
     filter: alpha(opacity=70);
     opacity: 0.7;
