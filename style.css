@@ -414,10 +414,16 @@ input[type="reset"]:focus-within,
 input[type="submit"]:focus-within {
     outline: thin dotted;
 }
-.scroll-up, body .nav-links .nav-previous, body .nav-links .nav-next {
-    background: #000;
+.scroll-up {
+    background: #383838;
     color: #fff;
 }
+
+body .nav-links .nav-next, body .nav-links .nav-previous {
+    background: transparent;
+    color: #fff;
+}
+
 button, input[type="button"], input[type="reset"], input[type="submit"] {
     background: #5a7fd5;
     border: 1px solid #5a7fd5;
@@ -443,6 +449,10 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
     -moz-transition: all 1s ease;
     -o-transition: all 1s ease;
     transition: all 1s ease;
+}
+.slider-button, .slider-button {
+    margin: auto;
+    width: 260px;
 }
 .btn-link-small:link,
 .btn-link-small:visited {
@@ -617,7 +627,7 @@ a:focus-visible {
     padding-top: 30px;
 }
 .site-branding {
-    margin: 0 auto;
+    float: left;
 }
 .site-branding .twp-site-branding .custom-logo-link {
     max-width: 250px;
@@ -709,6 +719,8 @@ a:focus-visible {
 .top-header {
     border-top: 1px solid;
     text-align: left;
+    width: 80%;
+    margin: auto;
 }
 .header-center .equal-row,
 .header-center .equal-row > [class*="col-"] {
@@ -837,8 +849,6 @@ a:focus-visible {
 }
 @media only screen and (min-width: 992px) {
     .main-navigation .icon-search {
-        border-left: 1px solid;
-        border-right: 1px solid;
         height: 72px;
         line-height: 72px;
         padding: 0 20px;
@@ -1808,8 +1818,16 @@ body .inner-banner {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 110px 0;
     position: relative;
+}
+body {
+    padding: 20px 0px 0px 0px;
+}
+.inner-banner{
+    width: 80%;
+    margin: auto;
+    padding-top: 110px;
+    padding-bottom: 110px;
 }
 body .inner-banner a {
     color: #5a7fd5;
@@ -1923,7 +1941,7 @@ body .inner-banner-img {
     display: inline-block;
     vertical-align: middle;
     width: 100%;
-}
+}   
 .search-results .content-area .entry-header .entry-title {
     text-align: center;
     margin-bottom: 15px;
@@ -1947,15 +1965,11 @@ body .inner-banner-img {
     display: inline-block;
     font-size: inherit;
 }
-.entry-title,
-.block-title {
-    text-transform: uppercase;
-}
 .entry-title {
     display: block;
     padding: 0;
     line-height: 1.4;
-    letter-spacing: 3px;
+    letter-spacing: 0.7px;
     margin: auto;
     position: relative;
 }
@@ -1993,9 +2007,8 @@ body .inner-banner-img {
 }
 .site-content .entry-footer,
 .site-content .post-tags {
-    text-transform: uppercase;
     font-size: 85%;
-    padding: 5px 15px;
+    padding: 5px 0px;
     margin: 15px auto;
     text-align: left;
 }
@@ -2042,7 +2055,7 @@ span.comments-link {
 }
 .twp-business-article {
     border-top: 1px solid;
-    padding: 10px 20px;
+    padding: 10px 0px;
     margin-bottom: 170px;
 }
 .content-no-image .twp-business-article {
@@ -2141,6 +2154,12 @@ span.comments-link {
     padding: 15px;
     width: 50%;
 }
+.nav-next{
+    padding-right: 0px;
+}
+.nav-previous{
+    padding-left: 0px;
+}
 .nav-previous {
     border-right: 2px solid #fff;
     text-align: left;
@@ -2161,11 +2180,11 @@ span.comments-link {
 }
 .nav-previous:before {
     content: "\34";
-    left: 15px;
+    left: 5px;
 }
 .nav-next:after {
     content: "\35";
-    right: 15px;
+    right: 5px;
 }
 .nav-previous a,
 .nav-next a {
@@ -2941,7 +2960,7 @@ body .widget.business_insights_popular_post_widget ul li {
     height: 100%;
     position: absolute;
     padding-left: 60px;
-    padding-right: 15px;
+    padding-right: 60px;
     margin-left: auto;
     margin-right: auto;
     top: 0;
@@ -2962,8 +2981,9 @@ body .widget.business_insights_popular_post_widget ul li {
     font-size: 48px;
     font-size: 8vh;
     line-height: 1;
-    text-transform: uppercase;
+    text-align: center;
 }
+
 @media only screen and (min-width: 768px) and (max-width: 1199px) {
     .slide-title {
         font-size: 52px;
@@ -3376,7 +3396,7 @@ nav.navigation.pagination {
     display: inline-block;
 }
 .post-category .meta-span a {
-    padding: 8px;
+    padding: 0px;
 }
 .bg-image {
     background-repeat: no-repeat;
@@ -3558,6 +3578,24 @@ h6.primary-bgcolor,
 .nav-links a {
     color: #fff;
 }
+body .nav-links .nav-next a {
+    padding-left: 14px;
+    padding-right: 30px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+body .nav-links .nav-previous a {
+    padding-left: 30px;
+    padding-right: 14px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+}
+body .nav-links .nav-next a, body .nav-links .nav-previous a {
+    background: #5a7fd5;
+    border: 1px solid #5a7fd5;
+    border-radius: 25px;
+}
+
 .site-footer .widget:not(.business_insights_social_widget) ul li,
 .site-footer .widget.business_insights_popular_post_widget ul li {
     border-color: #313131;

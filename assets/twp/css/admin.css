@@ -66,10 +66,10 @@ html[dir=rtl] .insights-checkbox-wrap label:after{left:inherit;right:0}
     .about-wrapper{width:540px}
 }
 @media (min-width:768px){
-    .about-wrapper{width:750px}
+    .about-wrapper{width:700px}
 }
 @media (min-width:992px){
-    .about-wrapper{width:970px}
+    .about-wrapper{width:850px}
 }
 .about-wrapper-inner{display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:-15px;margin-left:-15px}
 .about-page-header{background:#f5f7f9;padding:20px 0;margin-bottom:20px}

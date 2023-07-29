@@ -29,7 +29,7 @@
                         <?php business_insights_entry_category(); ?>
                     </span>
                 </div>
-                <div class="entry-meta text-uppercase">
+                <div class="entry-meta">
                     <?php business_insights_posted_details(); ?>
                 </div><!-- .entry-meta -->
 

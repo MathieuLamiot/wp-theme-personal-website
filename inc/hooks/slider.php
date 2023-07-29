@@ -87,26 +87,25 @@ if (!function_exists('business_insights_banner_slider')) :
                                     <img src="<?php echo esc_url($url); ?>">
                                 </div>
                             <?php } ?>
-                            <div class="slide-text animated secondary-textcolor">
-                                <div class="table-align">
-                                    <div class="table-align-cell v-align-bottom">
-                                        <div class="container">
+                            <div class="container">
+                                <div class="slide-text animated secondary-textcolor">
+                                    <div class="table-align">
+                                        <div class="table-align-cell v-align-bottom">
                                             <div class="row">
                                                 <div class="col-md-10 col-sm-12">
                                                     <div class="layer layer-fadeInLeft">
                                                         <h2 class="slide-title"><?php the_title(); ?></h2>
                                                     </div>
                                                     <div class="layer layer-fadeInRight visible hidden-xs">
-                                                        <?php if ($business_insights_slider_excerpt_number != 0) { ?>
-                                                            <?php echo wp_kses_post($business_insights_slider_content); ?>
-                                                        <?php } ?>
                                                     </div>
                                                     <div class="layer layer-fadeInUp">
-                                                        <a href="<?php the_permalink(); ?>"
-                                                           class="btn-link btn-link-primary">
-                                                            <?php echo esc_html($business_insights_slider_button_text); ?>
-                                                            <i class="ion-ios-arrow-right"></i>
-                                                        </a>
+                                                        <div class ="slider-button">
+                                                            <a href="<?php the_permalink(); ?>"
+                                                            class="btn-link btn-link-primary">
+                                                                <?php echo esc_html($business_insights_slider_button_text); ?>
+                                                                <i class="ion-ios-arrow-right"></i>
+                                                            </a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>

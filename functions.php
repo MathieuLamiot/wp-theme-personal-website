@@ -141,7 +141,7 @@ function business_insights_scripts()
 {
     wp_enqueue_style('owlcarousel', get_template_directory_uri() . '/assets/libraries/owlcarousel/css/owl.carousel.css');
     wp_enqueue_style('elegant-icon', get_template_directory_uri() . '/assets/libraries/elegant-icon/elegant-font.css');
-    wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/libraries/bootstrap/css/bootstrap.min.css');
+    wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/libraries/bootstrap/css/bootstrap.css');
     wp_enqueue_style('business-insights-style', get_stylesheet_uri());
     wp_style_add_data('business-insights-style', 'rtl', 'replace');
 

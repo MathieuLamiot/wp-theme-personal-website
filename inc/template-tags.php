@@ -38,7 +38,7 @@ if (!function_exists('business_insights_posted_details')) :
         );
 
         $byline = sprintf(
-            esc_html__( 'By %s', 'business-insights' ),
+            esc_html__( 'by %s', 'business-insights' ),
             '<a class="url" href="' . esc_url(get_author_posts_url($author_id)) . '">' . esc_html(get_the_author_meta('display_name', $author_id)) . '</a>'
         );
 
@@ -47,7 +47,7 @@ if (!function_exists('business_insights_posted_details')) :
 
         if (!is_single() && !post_password_required() && (comments_open() || get_comments_number())) {
             echo '<span class="comments-link secondary-font">';
-            comments_popup_link(esc_html__('comment', 'business-insights'), esc_html__('1 Comment', 'business-insights'), esc_html__('% Comments', 'business-insights'));
+            comments_popup_link(esc_html__('- 0 comments', 'business-insights'), esc_html__('- 1 Comment', 'business-insights'), esc_html__('- % Comments', 'business-insights'));
             echo '</span>';
         }
 
@@ -73,7 +73,7 @@ if (!function_exists('business_insights_entry_category')) :
             /* translators: used between list items, there is a space after the comma */
             $categories_list = get_the_category_list(esc_html__('/', 'business-insights'));
             if ($categories_list) {
-                printf(esc_html__('Category: %1$s', 'business-insights'), $categories_list);
+                printf(esc_html__('%1$s', 'business-insights'), $categories_list);
             }
         }
     }
