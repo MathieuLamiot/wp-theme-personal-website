@@ -52,7 +52,6 @@
         <div class="header-middle">
             <div class="container">
                 <div class="row equal-row">
-                    <div class="col-md-4 col-sm-12">
                         <div class="site-branding">
                             <div class="twp-site-branding">
                                 <?php
@@ -75,7 +74,6 @@
                                  ?>
                             </div>
                         </div>
-                    </div>
                     <?php
                     $top_header_location = business_insights_get_option('top_header_location');
                     $top_header_telephone = business_insights_get_option('top_header_telephone');
