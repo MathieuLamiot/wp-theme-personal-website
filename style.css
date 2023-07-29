@@ -240,6 +240,8 @@ input,
 select,
 textarea {
     font-family: 'Source Sans Pro','Helvetica','Arial','sans-serif';
+    text-align: justify;
+    text-justify: auto;
     color: #3d3d3d;
     letter-spacing: .3px;
     line-height: 1.6;
@@ -1683,7 +1685,7 @@ a:focus-visible {
 }
 .site-content {
     margin: 0 auto;
-    padding: 45px 0 0;
+    padding: 0px 0 0;
 }
 @media (min-width: 768px) {
     .site-content,

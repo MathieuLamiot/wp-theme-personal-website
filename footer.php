@@ -67,7 +67,7 @@
                                 echo wp_kses_post(business_insights_get_option('copyright_text'));
                             }
                             ?>
-                            <?php printf(esc_html__('Theme: %1$s by %2$s', 'business-insights'), 'Business Insights', '<a href="http://themeinwp.com/" target = "_blank" rel="designer">Themeinwp </a>');?>
+                            <?php printf(esc_html__('- Theme modified from: %1$s by %2$s', 'business-insights'), 'Business Insights', '<a href="http://themeinwp.com/" target = "_blank" rel="designer">Themeinwp </a>');?>
                         </h4>
                     </div>
                 </div>
