@@ -26,6 +26,7 @@ if (!function_exists('business_insights_banner_slider_args')) :
                 }
                 /*page query*/
                 $qargs = array(
+                    'fields' => 'ids',
                     'posts_per_page' => absint($business_insights_banner_slider_number),
                     'post_type' => 'page',
                     'post__in' => $business_insights_banner_slider_page_list_array,
@@ -36,6 +37,7 @@ if (!function_exists('business_insights_banner_slider_args')) :
             case 'from-category':
                 $business_insights_banner_slider_category = absint(business_insights_get_option('select_category_for_slider'));
                 $qargs = array(
+                    'fields' => 'ids',
                     'posts_per_page' => absint($business_insights_banner_slider_number),
                     'post_type' => 'post',
                     'cat' => absint($business_insights_banner_slider_category),
@@ -46,6 +48,42 @@ if (!function_exists('business_insights_banner_slider_args')) :
             default:
                 break;
         }
+        ?>
+        <?php
+    }
+endif;
+
+if (!function_exists('mlt_add_permanent_slider_content')) :
+    /**
+     * Add permanent custom content to the already computed slider WP Query
+     *
+     * @param WP_Query $variable_slider_content_query List of posts to be added to the slider, along with the permanent content
+     * 
+     * @return WP_Query $merged_query Posts to be added to the slider.
+     */
+    function mlt_add_permanent_slider_content( $variable_slider_content_query )
+    {
+
+        if(is_front_page()){
+            $permanent_slider_content_args = array(
+                'fields' => 'ids',
+                'post_type' => 'page',
+                'title' => 'About me',
+            );
+            $permanent_slider_content_query = new WP_Query($permanent_slider_content_args);
+
+            //now you got post IDs in $query->posts
+            $allTheIDs = array_merge($permanent_slider_content_query->posts, $variable_slider_content_query->posts,);
+        }
+        else{
+            $allTheIDs = $variable_slider_content_query->posts;
+        }
+        //new query, using post__in parameter
+        $merged_query = new WP_Query(array(
+            'post__in' => $allTheIDs,
+            'post_type' => 'any',
+        ));
+        return $merged_query;
         ?>
         <?php
     }
@@ -67,12 +105,13 @@ if (!function_exists('business_insights_banner_slider')) :
             return null;
         }
         $business_insights_banner_slider_args = business_insights_banner_slider_args();
-        $business_insights_banner_slider_query = new WP_Query($business_insights_banner_slider_args); ?>
+        $business_insights_banner_slider_query = new WP_Query($business_insights_banner_slider_args); 
+        $mlt_banner_slider_query = mlt_add_permanent_slider_content($business_insights_banner_slider_query) ?>
         <section class="twp-slider-wrapper">
             <div class="twp-slider">
                 <?php
-                if ($business_insights_banner_slider_query->have_posts()) :
-                    while ($business_insights_banner_slider_query->have_posts()) : $business_insights_banner_slider_query->the_post();
+                if ($mlt_banner_slider_query->have_posts()) :
+                    while ($mlt_banner_slider_query->have_posts()) : $mlt_banner_slider_query->the_post();
                         if (has_excerpt()) {
                             $business_insights_slider_content = get_the_excerpt();
                         } else {
