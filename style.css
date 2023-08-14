@@ -631,8 +631,13 @@ a:focus-visible {
 .site-branding {
     float: left;
 }
+.twp-site-branding-hblock {
+    display: inline-block;
+    vertical-align: middle;
+}
 .site-branding .twp-site-branding .custom-logo-link {
-    max-width: 250px;
+    max-width: 120px;
+    position: relative;
 }
 .site-branding .site-title {
     font-size: 42px;

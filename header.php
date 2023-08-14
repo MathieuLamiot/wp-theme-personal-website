@@ -54,24 +54,29 @@
                 <div class="row equal-row">
                         <div class="site-branding">
                             <div class="twp-site-branding">
-                                <?php
-                                business_insights_the_custom_logo();
-                                if (is_front_page() && is_home()) : ?>
-                                    <span class="site-title primary-font">
-                                    <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
-                                </span>
-                                <?php else : ?>
-                                    <span class="site-title primary-font">
-                                    <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
-                                </span>
-                                <?php
-                                endif;
-                                    $description = get_bloginfo('description', 'display');
-                                    if ($description || is_customize_preview()) : ?>
-                                        <p class="site-description"><?php echo esc_html($description); ?></p>
+                                <div class="twp-site-branding-hblock">
+                                    <?php
+                                    business_insights_the_custom_logo(); ?>
+                                </div>
+                                <div class="twp-site-branding-hblock">
+                                    <?php
+                                    if (is_front_page() && is_home()) : ?>
+                                        <span class="site-title primary-font">
+                                        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
+                                    </span>
+                                    <?php else : ?>
+                                        <span class="site-title primary-font">
+                                        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a>
+                                    </span>
                                     <?php
                                     endif;
-                                 ?>
+                                        $description = get_bloginfo('description', 'display');
+                                        if ($description || is_customize_preview()) : ?>
+                                            <p class="site-description"><?php echo esc_html($description); ?></p>
+                                        <?php
+                                        endif;
+                                    ?>
+                                </div>
                             </div>
                         </div>
                     <?php
