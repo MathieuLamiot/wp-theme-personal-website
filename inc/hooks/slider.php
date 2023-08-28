@@ -48,8 +48,8 @@ if (!function_exists('business_insights_banner_slider_args')) :
             default:
                 break;
         }
-        ?>
-        <?php
+?>
+    <?php
     }
 endif;
 
@@ -61,10 +61,10 @@ if (!function_exists('mlt_add_permanent_slider_content')) :
      * 
      * @return WP_Query $merged_query Posts to be added to the slider.
      */
-    function mlt_add_permanent_slider_content( $variable_slider_content_query )
+    function mlt_add_permanent_slider_content($variable_slider_content_query)
     {
 
-        if(is_front_page()){
+        if (is_front_page()) {
             $permanent_slider_content_args = array(
                 'fields' => 'ids',
                 'post_type' => 'page',
@@ -74,8 +74,7 @@ if (!function_exists('mlt_add_permanent_slider_content')) :
 
             //now you got post IDs in $query->posts
             $allTheIDs = array_merge($permanent_slider_content_query->posts, $variable_slider_content_query->posts,);
-        }
-        else{
+        } else {
             $allTheIDs = $variable_slider_content_query->posts;
         }
         //new query, using post__in parameter
@@ -84,8 +83,8 @@ if (!function_exists('mlt_add_permanent_slider_content')) :
             'post_type' => 'any',
         ));
         return $merged_query;
-        ?>
-        <?php
+    ?>
+    <?php
     }
 endif;
 
@@ -105,7 +104,7 @@ if (!function_exists('business_insights_banner_slider')) :
             return null;
         }
         $business_insights_banner_slider_args = business_insights_banner_slider_args();
-        $business_insights_banner_slider_query = new WP_Query($business_insights_banner_slider_args); 
+        $business_insights_banner_slider_query = new WP_Query($business_insights_banner_slider_args);
         $mlt_banner_slider_query = mlt_add_permanent_slider_content($business_insights_banner_slider_query) ?>
         <section class="twp-slider-wrapper">
             <div class="twp-slider">
@@ -117,13 +116,13 @@ if (!function_exists('business_insights_banner_slider')) :
                         } else {
                             $business_insights_slider_content = business_insights_words_count($business_insights_slider_excerpt_number, get_the_content());
                         }
-                        ?>
+                ?>
                         <div class="single-slide">
                             <?php if (has_post_thumbnail()) {
                                 $thumb = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
                                 $url = $thumb['0'];  ?>
-                                <div class="slide-bg bg-image animated">
-                                    <img src="<?php echo esc_url($url); ?>">
+                                <div class="slide-bg bg-image-slider animated">
+                                    <img src="<?php echo esc_url($url); ?>" class="slider-image">
                                 </div>
                             <?php } ?>
                             <div class="container">
@@ -138,9 +137,8 @@ if (!function_exists('business_insights_banner_slider')) :
                                                     <div class="layer layer-fadeInRight visible hidden-xs">
                                                     </div>
                                                     <div class="layer layer-fadeInUp">
-                                                        <div class ="slider-button">
-                                                            <a href="<?php the_permalink(); ?>"
-                                                            class="btn-link btn-link-primary">
+                                                        <div class="slider-button">
+                                                            <a href="<?php the_permalink(); ?>" class="btn-link btn-link-primary">
                                                                 <?php echo esc_html($business_insights_slider_button_text); ?>
                                                                 <i class="ion-ios-arrow-right"></i>
                                                             </a>
@@ -153,14 +151,14 @@ if (!function_exists('business_insights_banner_slider')) :
                                 </div>
                             </div>
                         </div>
-                        <?php
+                <?php
                     endwhile;
                     wp_reset_postdata();
                 endif; ?>
             </div>
         </section>
         <!-- end slider-section -->
-        <?php
+<?php
     }
 endif;
 add_action('business_insights_action_slider_post', 'business_insights_banner_slider', 10);
