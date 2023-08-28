@@ -119,7 +119,11 @@ if (!function_exists('business_insights_banner_slider')) :
                 ?>
                         <div class="single-slide">
                             <?php if (has_post_thumbnail()) {
-                                $thumb = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'full');
+                                $thumb_size = 'full';
+                                if ( wp_is_mobile() ) {
+                                    $thumb_size = 'medium_large';
+                                }
+                                $thumb = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), $thumb_size);
                                 $url = $thumb['0'];  ?>
                                 <div class="slide-bg bg-image-slider animated">
                                     <img src="<?php echo esc_url($url); ?>" class="slider-image">
