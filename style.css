@@ -2882,6 +2882,11 @@ body .widget.business_insights_popular_post_widget ul li {
     background-size: cover;
     background-position: center center;
 }
+.slider-image {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+}
 .single-slide .btn-link {
     border: 0;
 }
@@ -3405,7 +3410,7 @@ nav.navigation.pagination {
 .post-category .meta-span a {
     padding: 0px;
 }
-.bg-image {
+.bg-image .bg-image-slider {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
