@@ -201,8 +201,10 @@
 
     <?php
     if (! is_page_template( 'front-page-template.php' )) {
-        if (is_front_page()) {
+        if (is_front_page()) { #Home page
             do_action('business_insights_action_slider_post');
+        } else if (is_home()){
+            #Avoid slider space on blog page
         } else {
             do_action('business-insights-page-inner-title');
         }
