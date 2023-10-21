@@ -201,7 +201,7 @@
 
     <?php
     if (! is_page_template( 'front-page-template.php' )) {
-        if (is_front_page() || is_home()) {
+        if (is_front_page()) {
             do_action('business_insights_action_slider_post');
         } else {
             do_action('business-insights-page-inner-title');
