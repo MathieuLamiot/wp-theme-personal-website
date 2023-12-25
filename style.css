@@ -593,7 +593,7 @@ td:last-child {
 ## Links
 --------------------------------------------------------------*/
 a {
-    color: #000;
+    color: #5a7fd5;
     text-decoration: none;
 }
 a:hover,
@@ -603,7 +603,7 @@ a:focus {
 }
 a:active,
 a:visited {
-    color: #000;
+    color: #5a7fd5;
     filter: alpha(opacity=84);
     opacity: .84;
 }
