@@ -2885,12 +2885,13 @@ body .widget.business_insights_popular_post_widget ul li {
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
+    align-content: center;
 }
 .slider-image {
     display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
+    min-width: 100%;
+    min-height: 100%;
+    justify-items: center;
 }
 .single-slide .btn-link {
     border: 0;
