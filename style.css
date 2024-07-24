@@ -756,6 +756,7 @@ a:focus-visible {
 }
 .main-navigation {
     position: relative;
+    border-bottom: 1px solid rgb(61, 61, 61);
 }
 .nav-right {
     float: right;
@@ -1694,6 +1695,7 @@ a:focus-visible {
 }
 .site-content {
     margin: 0 auto;
+    margin-top: 20px;
     padding: 0px 0 0;
 }
 @media (min-width: 768px) {
@@ -2065,7 +2067,7 @@ span.comments-link {
     width: 100%;
 }
 .twp-business-article {
-    border-top: 1px solid;
+    border-bottom: 1px solid;
     padding: 10px 0px;
     margin-bottom: 170px;
 }
