@@ -17,6 +17,20 @@ if (!function_exists('business_insights_add_theme_meta_box')) :
 
         $apply_metabox_post_types = array('post', 'page');
 
+        // Retrieve Custom Post Types to add metabox to them too
+        $post_types_args = array(
+            'public'   => true,
+            '_builtin' => false
+        );
+        $output = 'names';
+        $operator = 'and';
+          
+        $custom_post_types = get_post_types( $post_types_args, $output, $operator );
+        
+        if( $custom_post_types ) {
+            $apply_metabox_post_types = array_merge($apply_metabox_post_types, $custom_post_types);
+        }
+
         foreach ($apply_metabox_post_types as $key => $type) {
             add_meta_box(
                 'business-insights-theme-settings',
