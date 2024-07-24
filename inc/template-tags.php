@@ -68,13 +68,10 @@ if (!function_exists('business_insights_entry_category')) :
      */
     function business_insights_entry_category()
     {
-        // Hide category and tag text for pages.
-        if ('post' === get_post_type()) {
-            /* translators: used between list items, there is a space after the comma */
-            $categories_list = get_the_category_list(esc_html__('/', 'business-insights'));
-            if ($categories_list) {
-                printf(esc_html__('%1$s', 'business-insights'), $categories_list);
-            }
+        /* translators: used between list items, there is a space after the comma */
+        $categories_list = get_the_category_list(esc_html__('/', 'business-insights'));
+        if ($categories_list) {
+            printf(esc_html__('%1$s', 'business-insights'), $categories_list);
         }
     }
 endif;

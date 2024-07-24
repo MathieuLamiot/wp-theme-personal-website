@@ -24,11 +24,13 @@
                 <h2 class="entry-title">
                     <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
                 </h2>
-                <div class="post-category secondary-font">
-                    <span class="meta-span">
-                        <?php business_insights_entry_category(); ?>
-                    </span>
-                </div>
+                <?php if ('post' === get_post_type()) { ?>
+                    <div class="post-category secondary-font">
+                        <span class="meta-span">
+                            <?php business_insights_entry_category(); ?>
+                        </span>
+                    </div>
+                <?php } ?>
                 <div class="entry-meta">
                     <?php business_insights_posted_details(); ?>
                 </div><!-- .entry-meta -->
