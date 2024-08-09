@@ -141,13 +141,11 @@
         <div id="nav-affix" class="top-header">
             <div class="container">
                 <nav class="main-navigation" role="navigation">
-                    
-                    <a href="javascript:void(0)" class="skip-link-menu-start-2"></a>
 
-                    <a href="javascript:void(0)" class="toggle-menu" aria-controls="primary-menu" aria-expanded="false">
+                    <button class="toggle-menu" aria-controls="primary-menu" aria-expanded="false">
                         <span class="screen-reader-text"><?php esc_html_e('Primary Menu', 'business-insights'); ?></span>
                         <i class="ham"></i>
-                    </a>
+                    </button>
 
                     <?php wp_nav_menu(array(
                         'theme_location' => 'primary',
@@ -155,31 +153,13 @@
                         'container' => 'div',
                         'container_class' => 'menu'
                     )); ?>
-                    
-                    <a href="javascript:void(0)" class="skip-link-menu-end"></a>
 
                     <div class="nav-right">
                         <?php if (1 == business_insights_get_option ('enable_search_option')) { ?>
-                            <a href="javascript:void(0)" class="icon-search header-icon">
+                            <button type="button" class="icon-search header-icon" aria-label="Search">
                                 <i class="icon_search"></i>
-                            </a>
+                            </button>
                         <?php } ?>
-
-                        <a href="javascript:void(0)" class="icon-location header-icon hidden-sm hidden-md hidden-lg">
-                            <i class="icon_pin_alt"></i>
-                        </a>
-
-                        <div class="social-icons">
-                            <?php
-                            wp_nav_menu(
-                                array('theme_location' => 'social',
-                                    'link_before' => '<span>',
-                                    'link_after' => '</span>',
-                                    'menu_id' => 'social-menu',
-                                    'fallback_cb' => false,
-                                    'menu_class' => false
-                                )); ?>
-                        </div>
                     </div>
                 </nav><!-- #site-navigation -->
             </div>
@@ -191,8 +171,7 @@
         
         <div class="table-align">
             <div class="table-align-cell v-align-middle">
-                <a href="javascript:void(0)" class="skpi-link-search-start"></a>
-                <a href="javascript:void(0)" class="close-popup"></a>
+                <button class="close-popup"></button>
                 <?php get_search_form(); ?>
             </div>
         </div>

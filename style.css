@@ -729,6 +729,7 @@ a:focus-visible {
 }
 .top-header {
     border-top: 1px solid;
+    border-bottom: 1px solid;
     text-align: left;
     width: 80%;
     margin: auto;
@@ -756,7 +757,6 @@ a:focus-visible {
 }
 .main-navigation {
     position: relative;
-    border-bottom: 1px solid rgb(61, 61, 61);
 }
 .nav-right {
     float: right;
@@ -772,17 +772,28 @@ a:focus-visible {
 }
 .main-navigation .toggle-menu {
     height: 62px;
-    text-align: center;
-    cursor: pointer;
-    font-size: 15px;
-    margin-left: 80px;
-    margin-right: 80px;
     display: none;
+}
+.icon-search,
+.icon-search:hover,
+.icon-search:focus,
+.toggle-menu,
+.toggle-menu:hover,
+.toggle-menu:focus {
+    background: #fff;
+    background-color: #fff;
+    color: #000;
+    border-color: #fff;
+}
+.icon-search,
+.toggle-menu {
+    width: 100%;
+    text-align: center;
+    margin: 0;
 }
 .ham {
     width: 23px;
     height: 2px;
-    top: 30px;
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -994,7 +1005,6 @@ a:focus-visible {
         display: inline-block;
         width: 30px;
         height: 40px;
-        line-height: 40px;
         vertical-align: middle;
     }
 }
@@ -1131,9 +1141,9 @@ a:focus-visible {
 .close-popup-1:before {
     content: '';
     height: 1px;
-    width: 41px;
+    width: 21px;
     position: absolute;
-    background-color: #000;
+    background-color: #ffffff;
     left: 0;
     right: 0;
     bottom: 0;
@@ -1186,7 +1196,7 @@ a:focus-visible {
         -o-transition: all 0.3s ease;
         transition: all 0.3s ease;
     }
-    .reveal-location #masthead .meta-info-wrapper {
+    #masthead .meta-info-wrapper {
         filter: alpha(opacity=100);
         opacity: 1;
         visibility: visible;
@@ -1227,7 +1237,7 @@ a:focus-visible {
     .meta-info-wrapper .close-popup-1:before {
         content: '';
         height: 1px;
-        width: 41px;
+        width: 21px;
         position: absolute;
         background-color: #000;
         left: 0;
@@ -3616,13 +3626,16 @@ body .nav-links .nav-next a, body .nav-links .nav-previous a {
     border-color: #313131;
 }
 .top-header,
-.main-navigation .icon-search,
 .article-list,
 .popup-search .search-form label .search-field {
     border-color: #eaeaea;
+    border-bottom-color: rgb(61, 61, 61);
 }
 .main-navigation .icon-search i {
     line-height: inherit;
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
 }
 @media only screen and (max-width: 767px) {
     .site-branding .site-title {
@@ -3720,11 +3733,7 @@ ul.trail-items li:last-child a {
     cursor: default;
     pointer-events: none;
 }
-a.skip-link-menu-end, a.skip-link-menu-start-2 {
-    display: none;
-}
-.site-header.menu-active a.skip-link-menu-end,
-.site-header.menu-active a.skip-link-menu-start-2 {
+.site-header.menu-active {
     display: block;
 }
 body .site .wpforms-container-full .wpforms-form button[type=submit] {

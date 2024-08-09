@@ -35,27 +35,6 @@
                 return false;
             });
 
-            e('.skip-link-menu-end').focus(function(){
-
-                if( e('.ham').hasClass('exit') ){
-                    e('.toggle-menu').focus();
-                }
-
-            });
-
-            
-
-            e('.skip-link-menu-start-2').focus(function(){
-                
-                if( e('.site-header').hasClass('menu-active') ){
-
-
-                    e('#primary-menu li:last-child a').focus();
-
-                }
-
-            });
-
             e(document).keyup(function(j) {
                 if (j.key === "Escape") { // escape key maps to keycode `27`
                     
@@ -114,29 +93,12 @@
             e('.icon-search').on('click', function (event) {
                 e('body').toggleClass('reveal-search');
                 e('html').attr('style','overflow-y: scroll; position: fixed; width: 100%; left: 0px; top: 0px;');
-                setTimeout(function () {
-                    e('.close-popup').focus();
-                }, 300);
-                
             });
             e('.close-popup').on('click', function (event) {
                 e('body').removeClass('reveal-search');
                 e('html').attr('style','');
                 setTimeout(function () {
                     e('.icon-search').focus();
-                }, 300);
-            });
-
-            e('.icon-location').on('click', function (event) {
-                e('body').toggleClass('reveal-location');
-                setTimeout(function () {
-                    e('.close-popup-1').focus();
-                }, 300);
-            });
-            e('.close-popup-1').on('click', function (event) {
-                e('body').removeClass('reveal-location');
-                setTimeout(function () {
-                    e('.icon-location').focus();
                 }, 300);
             });
 
@@ -161,10 +123,6 @@
 
                     }
                 }
-            });
-
-            e('.skpi-link-search-start').focus(function(){
-                e('.popup-search .search-submit').focus();
             });
 
             e( 'input, a, button' ).on( 'focus', function() {
