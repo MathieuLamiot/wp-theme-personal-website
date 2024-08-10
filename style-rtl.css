@@ -242,7 +242,6 @@ textarea {
     font-family: 'Source Sans Pro','Helvetica','Arial','sans-serif';
     text-align: justify;
     text-justify: auto;
-    color: #3d3d3d;
     letter-spacing: .3px;
     line-height: 1.6;
     font-size: 1.25rem;
@@ -2888,20 +2887,21 @@ body .widget.business_insights_popular_post_widget ul li {
     position: relative;
 }
 .slide-bg {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.slider-image {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
+    left: 0;
+    top: 0;
     height: 100%;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
+    width: 100%;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    align-content: center;
+}
+.slider-image {
+    display: flex;
+    min-width: 100%;
+    min-height: 100%;
+    justify-items: center;
 }
 .single-slide .btn-link {
     border: 0;
