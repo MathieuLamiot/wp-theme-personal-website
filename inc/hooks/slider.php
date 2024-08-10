@@ -119,13 +119,7 @@ if (!function_exists('business_insights_banner_slider')) :
                 ?>
                         <div class="single-slide">
                             <?php if (has_post_thumbnail()) {
-                                $thumb_size = 'full';
-                                if ( wp_is_mobile() ) {
-                                    $thumb_size = 'medium_large';
-                                }
-                                $thumb_id = get_post_thumbnail_id(get_the_ID());
-                                $thumb = wp_get_attachment_image_src($thumb_id, $thumb_size);
-                                $url = $thumb['0'];  
+                                $thumb_id = get_post_thumbnail_id(get_the_ID()); 
                                 // Get the attachment description and use it as the alt attribute
                                 $alt_text = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
                                 if (empty($alt_text)) {
@@ -139,7 +133,10 @@ if (!function_exists('business_insights_banner_slider')) :
                                 }
                                 ?>
                                 <div class="slide-bg bg-image-slider animated">
-                                    <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($alt_text); ?>" class="slider-image">
+                                    <?php echo wp_get_attachment_image($thumb_id, 'full', false, array(
+                                        'class' => 'slider-image',
+                                        'alt' => esc_attr($alt_text)
+                                    )); ?>
                                 </div>
                             <?php } ?>
                             <div class="container">

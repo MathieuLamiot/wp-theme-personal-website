@@ -2888,21 +2888,20 @@ body .widget.business_insights_popular_post_widget ul li {
     position: relative;
 }
 .slide-bg {
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100%;
+    position: relative;
     width: 100%;
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center center;
-    align-content: center;
+    height: 100%;
+    overflow: hidden;
 }
+
 .slider-image {
-    display: flex;
-    min-width: 100%;
-    min-height: 100%;
-    justify-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
 }
 .single-slide .btn-link {
     border: 0;
