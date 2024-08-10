@@ -60,7 +60,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="site-info">
-                        <h4 class="site-copyright secondary-font">
+                        <p class="site-copyright secondary-font">
                             <?php
                             $business_insights_copyright_text = wp_kses_post(business_insights_get_option('copyright_text'));
                             if (!empty($business_insights_copyright_text)) {
@@ -68,7 +68,7 @@
                             }
                             ?>
                             <?php printf(esc_html__('- Theme based on: %1$s by %2$s', 'business-insights'), 'Business Insights', '<a href="http://themeinwp.com/" target = "_blank" rel="designer">Themeinwp </a> - <a href="https://www.vecteezy.com/free-vector/ml-logo">Ml Logo Vectors by Vecteezy</a>');?>
-                        </h4>
+                        </p>
                     </div>
                 </div>
             </div>

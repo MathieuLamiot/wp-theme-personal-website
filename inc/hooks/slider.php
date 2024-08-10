@@ -123,10 +123,23 @@ if (!function_exists('business_insights_banner_slider')) :
                                 if ( wp_is_mobile() ) {
                                     $thumb_size = 'medium_large';
                                 }
-                                $thumb = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), $thumb_size);
-                                $url = $thumb['0'];  ?>
+                                $thumb_id = get_post_thumbnail_id(get_the_ID());
+                                $thumb = wp_get_attachment_image_src($thumb_id, $thumb_size);
+                                $url = $thumb['0'];  
+                                // Get the attachment description and use it as the alt attribute
+                                $alt_text = get_post_meta($thumb_id, '_wp_attachment_image_alt', true);
+                                if (empty($alt_text)) {
+                                    // If no alt text is set, use the attachment description
+                                    $attachment = get_post($thumb_id);
+                                    $alt_text = $attachment->post_content; // This is the description field
+                                }
+                                // Fallback if description is empty
+                                if (empty($alt_text)) {
+                                    $alt_text = get_the_title($thumb_id); // Fallback to image title if description is not available
+                                }
+                                ?>
                                 <div class="slide-bg bg-image-slider animated">
-                                    <img src="<?php echo esc_url($url); ?>" class="slider-image">
+                                    <img src="<?php echo esc_url($url); ?>" alt="<?php echo esc_attr($alt_text); ?>" class="slider-image">
                                 </div>
                             <?php } ?>
                             <div class="container">
