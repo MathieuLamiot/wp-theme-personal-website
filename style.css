@@ -616,7 +616,7 @@ a:focus-visible {
     outline: thin dotted;
 }
 p a, p a:hover, p a:focus, p a:active, p a:visited {
-    color: rgb(0, 0, 238)
+    color: #6464ff;
 }
 /*--------------------------------------------------------------
 ## Menus

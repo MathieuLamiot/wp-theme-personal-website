@@ -155,7 +155,7 @@ if (!function_exists('business_insights_banner_slider')) :
                                                     </div>
                                                     <div class="layer layer-fadeInUp">
                                                         <div class="slider-button">
-                                                            <a href="<?php the_permalink(); ?>" class="btn-link btn-link-primary">
+                                                            <a href="<?php the_permalink(); ?>" class="btn-link btn-link-primary" aria-label="Read the article: <?php the_title(); ?>">
                                                                 <?php echo esc_html($business_insights_slider_button_text); ?>
                                                                 <i class="ion-ios-arrow-right"></i>
                                                             </a>
