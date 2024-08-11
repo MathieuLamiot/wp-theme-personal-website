@@ -615,6 +615,7 @@ a:active {
 a:focus-visible {
     outline: thin dotted;
 }
+li a, li a:hover, li a:focus, li a:active, li a:visited,
 p a, p a:hover, p a:focus, p a:active, p a:visited {
     color: #5050ff;
 }
