@@ -3805,3 +3805,17 @@ figure.wp-block-gallery.owl-carousel .owl-nav > div.owl-next {
     transform: scaleX(-1);
     /*rtl:end:ignore*/
 }
+details summary {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+details summary::before {
+    content: '\25BC'; /* Unicode for down arrow */
+    margin-right: 8px; /* Space between icon and text */
+    font-size: 16px; /* Adjust size as needed */
+    transition: transform 0.3s ease; /* Smooth transition for rotating the icon */
+}
+details[open] summary::before {
+    content: '\25B2'; /* Unicode for up arrow */
+}
