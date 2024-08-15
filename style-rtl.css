@@ -615,9 +615,14 @@ a:active {
 a:focus-visible {
     outline: thin dotted;
 }
-li a, li a:hover, li a:focus, li a:active, li a:visited,
+ul.wp-block-list li a,
+ul.wp-block-list li a:hover,
+ul.wp-block-list li a:focus,
+ul.wp-block-list li a:active,
+ul.wp-block-list li a:visited,
 p a, p a:hover, p a:focus, p a:active, p a:visited {
-    color: #5050ff;
+    color: #5a7fd5;
+    text-decoration: underline;
 }
 /*--------------------------------------------------------------
 ## Menus
