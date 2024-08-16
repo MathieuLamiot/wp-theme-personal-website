@@ -1926,6 +1926,12 @@ body .inner-banner-img {
 .single-slide {
     position: relative;
 }
+.single-slide, .slide-title, .slider-button {
+    display: none;
+}
+.first-single-slide {
+    display: block;
+}
 .overlay-bg,
 .single-slide:after {
     background: #000;

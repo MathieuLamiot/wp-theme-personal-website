@@ -110,6 +110,7 @@ if (!function_exists('business_insights_banner_slider')) :
             <div class="twp-slider">
                 <?php
                 if ($mlt_banner_slider_query->have_posts()) :
+                    $is_first_slide = true;
                     while ($mlt_banner_slider_query->have_posts()) : $mlt_banner_slider_query->the_post();
                         if (has_excerpt()) {
                             $business_insights_slider_content = get_the_excerpt();
@@ -117,7 +118,19 @@ if (!function_exists('business_insights_banner_slider')) :
                             $business_insights_slider_content = business_insights_words_count($business_insights_slider_excerpt_number, get_the_content());
                         }
                 ?>
+                <?php 
+                    if ($is_first_slide) { 
+                ?>
+                        <div class="single-slide first-single-slide">
+                <?php
+                        $is_first_slide = false;
+                    } 
+                    else { 
+                ?>
                         <div class="single-slide">
+                <?php 
+                    } 
+                ?>
                             <?php if (has_post_thumbnail()) {
                                 $thumb_id = get_post_thumbnail_id(get_the_ID()); 
                                 // Get the attachment description and use it as the alt attribute

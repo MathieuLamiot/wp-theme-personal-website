@@ -166,6 +166,9 @@
                     items: 1
                 });
             });
+            e(".single-slide").css('display', 'block');
+            e(".slide-title").css('display', 'block');
+            e(".slider-button").css('display', 'block');
 
             e(".twp-testimonial").owlCarousel({
                 items: 1,
