@@ -766,6 +766,11 @@ p a, p a:hover, p a:focus, p a:active, p a:visited {
 .nav-right {
     float: right;
 }
+
+.main-navigation .toggle-menu {
+    display: none;
+}
+
 .main-navigation .menu,
 .main-navigation .social-icons,
 .main-navigation .icon-search {
@@ -777,7 +782,6 @@ p a, p a:hover, p a:focus, p a:active, p a:visited {
 }
 .main-navigation .toggle-menu {
     height: 62px;
-    display: none;
 }
 .icon-search,
 .icon-search:hover,
@@ -1013,83 +1017,91 @@ p a, p a:hover, p a:focus, p a:active, p a:visited {
         vertical-align: middle;
     }
 }
-.main-navigation .menu .menu-mobile {
-    margin: 0;
-    padding: 0;
-    display: block;
-    list-style: none;
-    text-align: left;
-    position: relative;
-    z-index: 9999;
-    background-color: #fff;
-    display: none;
-}
-.main-navigation .menu .menu-mobile li {
-    display: block;
-    border-top: 1px solid #eee;
-    float: none;
-}
-.main-navigation .menu .menu-mobile li a {
-    color: #000;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 50px;
-    letter-spacing: 0.05em;
-    display: block;
-    text-decoration: none;
-    position: relative;
-    padding-right: 30px;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-.main-navigation .menu .menu-mobile li a:hover {
-    filter: alpha(opacity=70);
-    opacity: 0.7;
-}
-.main-navigation .menu .menu-mobile li a i {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 30px;
-    z-index: 1;
-}
-.main-navigation .menu .menu-mobile li a i.active:after {
-    width: 13px;
-    height: 1px;
-}
-.main-navigation .menu .menu-mobile li a i:before,
-.main-navigation .menu .menu-mobile li a i:after {
-    content: '';
-    width: 13px;
-    height: 1px;
-    background-color: #848484;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-}
-.main-navigation .menu .menu-mobile li a i:after {
-    width: 1px;
-    height: 13px;
-}
-.main-navigation .menu .menu-mobile li .sub-menu {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    border-top: 1px solid #eee;
-    display: none;
-}
-.main-navigation .menu .menu-mobile li .sub-menu > li a {
-    margin-left: 15px;
-}
-.main-navigation .menu .menu-mobile li .sub-menu > li:first-child {
-    border-top: 0;
+/* Styles for mobile */
+@media (max-width: 991px) {
+
+
+    .main-navigation .toggle-menu {
+        display: block;
+    }
+    .main-navigation .menu .menu {
+        margin: 0;
+        padding: 0;
+        display: block;
+        list-style: none;
+        text-align: left;
+        position: relative;
+        z-index: 9999;
+        background-color: #fff;
+        display: none;
+    }
+    .main-navigation .menu .menu li {
+        display: block;
+        border-top: 1px solid #eee;
+        float: none;
+    }
+    .main-navigation .menu .menu li a {
+        color: #000;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 50px;
+        letter-spacing: 0.05em;
+        display: block;
+        text-decoration: none;
+        position: relative;
+        padding-right: 30px;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
+    }
+    .main-navigation .menu .menu li a:hover {
+        filter: alpha(opacity=70);
+        opacity: 0.7;
+    }
+    .main-navigation .menu .menu li a i {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 30px;
+        z-index: 1;
+    }
+    .main-navigation .menu .menu li a i.active:after {
+        width: 13px;
+        height: 1px;
+    }
+    .main-navigation .menu .menu li a i:before,
+    .main-navigation .menu .menu li a i:after {
+        content: '';
+        width: 13px;
+        height: 1px;
+        background-color: #848484;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+    .main-navigation .menu .menu li a i:after {
+        width: 1px;
+        height: 13px;
+    }
+    .main-navigation .menu .menu li .sub-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border-top: 1px solid #eee;
+        display: none;
+    }
+    .main-navigation .menu .menu li .sub-menu > li a {
+        margin-left: 15px;
+    }
+    .main-navigation .menu .menu li .sub-menu > li:first-child {
+        border-top: 0;
+    }
 }
 .popup-search {
     position: fixed;
