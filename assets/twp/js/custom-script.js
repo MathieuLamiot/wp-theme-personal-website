@@ -10,7 +10,7 @@
         },
         toggleMenu: function () {
             e('#masthead').on('click', '.toggle-menu', function (event) {
-                var ethis = e('.main-navigation .menu .menu-mobile');
+                var ethis = e('.main-navigation .menu .menu');
                 if (ethis.css('display') == 'block') {
                     ethis.slideUp('300');
                     e("#masthead").removeClass('menu-active');
@@ -20,7 +20,7 @@
                 }
                 e('.ham').toggleClass('exit');
             });
-            e('#masthead .main-navigation ').on('click', '.menu-mobile a i', function (event) {
+            e('#masthead .main-navigation ').on('click', '.menu a i', function (event) {
                 event.preventDefault();
                 var ethis = e(this),
                     eparent = ethis.closest('li'),
@@ -42,7 +42,7 @@
 
                     if( e('.ham').hasClass('exit') ){
                        
-                        var ethis = e('.main-navigation .menu .menu-mobile');
+                        var ethis = e('.main-navigation .menu .menu');
                         if (ethis.css('display') == 'block') {
                             ethis.slideUp('300');
                             e("#masthead").removeClass('menu-active');
@@ -63,17 +63,36 @@
                 var ethis = e('.main-navigation .menu > ul'),
                     eparent = ethis.closest('.main-navigation'),
                     pointbreak = eparent.data('epointbreak'),
-                    window_width = window.innerWidth;
+                    window_width = window.innerWidth,
+                    current_mode = eparent.data('display_mode');
                 if (typeof pointbreak == 'undefined') {
                     pointbreak = 991;
                 }
-                if (pointbreak >= window_width) {
-                    ethis.addClass('menu-mobile').removeClass('menu-desktop');
-                    e('.main-navigation .toggle-menu').css('display', 'block');
-                } else {
-                    ethis.addClass('menu-desktop').removeClass('menu-mobile').css('display', '');
-                    e('.main-navigation .toggle-menu').css('display', '');
+                if (typeof current_mode == 'undefined') {
+                    if (pointbreak >= window_width) {
+                        current_mode = 'mobile';
+                    } else {
+                        current_mode = 'desktop';
+                    }
                 }
+                if (pointbreak >= window_width && current_mode == 'desktop') {
+                    var ethis = e('.main-navigation .menu');
+                    //ethis.css('display', 'none');
+                    ethis = e('.main-navigation .menu .menu');
+                    ethis.css('display', 'none');
+                } else if (pointbreak < window_width && current_mode == 'mobile') {
+                    var ethis = e('.main-navigation .menu');
+                    //ethis.css('display', 'block');
+                    ethis = e('.main-navigation .menu .menu');
+                    ethis.css('display', 'block');
+                    e('.ham').removeClass('exit');
+                }
+                if (pointbreak >= window_width) {
+                    var new_mode = 'mobile';
+                } else {
+                    var new_mode = 'desktop';
+                }
+                eparent.data('display_mode', new_mode);
             }
         },
         menuArrow: function () {
