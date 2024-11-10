@@ -204,6 +204,8 @@ class Breadcrumb_Trail {
 
                 // Wrap the item with its itemprop.
 
+                $link_item = home_url();
+
                 // If viewing a single post.
                 if ( is_singular() || is_page() ){
 
@@ -213,8 +215,17 @@ class Breadcrumb_Trail {
                 }
                 elseif ( is_archive() && ( !is_day() && !is_month() && !is_year() && !is_tag() ) ) {
 
-                    $category = get_queried_object();
-                    $link_item = get_category_link( $category->term_id );
+                    $queried_object = get_queried_object();
+
+                    if ( isset( $queried_object->term_id ) ) {
+                        $link_item = get_category_link( $queried_object->term_id );
+                    } elseif ( isset( $queried_object->name ) && isset( $queried_object->taxonomy ) ) {
+                        // For custom taxonomies
+                        $term_link = get_term_link( $queried_object );
+                        if ( !is_wp_error( $term_link ) ) {
+                            $link_item = $term_link;
+                        }
+                    }
 
                 } elseif ( is_day() ) {
 
@@ -236,16 +247,6 @@ class Breadcrumb_Trail {
                 } elseif ( is_author() ) {
 
                     $link_item = get_author_posts_url( get_current_user_id() );
-
-                }
-                elseif ( is_search() ) {
-
-                    $link_item = home_url();
-
-                }
-                else{
-
-                    $link_item = home_url();
 
                 }
 
