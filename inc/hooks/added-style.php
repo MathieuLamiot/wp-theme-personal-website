@@ -62,7 +62,7 @@ if (!function_exists('business_insights_trigger_custom_css_action')):
         if (!empty($business_insights_site_title_font)) {
             $css .= '@media only screen and (min-width: 992px){';
             $css .= '.site-branding .site-title a{';
-            $css .= 'font-size: ' . esc_html($business_insights_site_title_font) . 'px !important;';
+            $css .= 'font-size: ' . absint($business_insights_site_title_font) . 'px !important;';
             $css .= '}';
             $css .= '}';
         }
