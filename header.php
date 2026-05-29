@@ -155,11 +155,60 @@
                     )); ?>
 
                     <div class="nav-right">
-                        <?php if (1 == business_insights_get_option ('enable_search_option')) { ?>
-                            <button type="button" class="icon-search header-icon" aria-label="Search">
-                                <i class="icon_search"></i>
-                            </button>
-                        <?php } ?>
+                    <?php if (1 == business_insights_get_option('enable_search_option')) : ?>
+                        <button type="button" class="icon-search header-icon" aria-label="Search">
+                        <i class="icon_search" aria-hidden="true"></i>
+                        </button>
+                    <?php endif; ?>
+
+                    <button
+                        type="button"
+                        class="header-icon social-icons icon-linkedin"
+                        aria-label="LinkedIn"
+                        onclick="window.open('https://www.linkedin.com/in/mathieu-lamiot','_blank','noopener,noreferrer')""
+                    >
+                    <img
+                        src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/icons/linkedin.png"
+                        aria-hidden="true"
+                        alt=""
+                        width="20"
+                        height="20"
+                        loading="lazy"
+                        decoding="async"
+                        />
+                    </button>
+
+                    <button
+                        type="button"
+                        class="header-icon social-icons icon-github"
+                        aria-label="GitHub"
+                        onclick="window.open('https://github.com/mathieulamiot','_blank','noopener,noreferrer')"
+                    >
+                        <img
+                        src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/icons/github.png"
+                        alt=""
+                        width="20"
+                        height="20"
+                        loading="lazy"
+                        decoding="async"
+                        />
+                    </button>
+
+                    <button
+                        type="button"
+                        class="header-icon social-icons icon-wordpress"
+                        aria-label="WordPress"
+                        onclick="window.open('https://profiles.wordpress.org/mathieulamiotwpmedia','_blank','noopener,noreferrer')"
+                    >
+                        <img
+                        src="<?php echo esc_url( get_stylesheet_directory_uri() ); ?>/assets/icons/wordpress.png"
+                        alt=""
+                        width="20"
+                        height="20"
+                        loading="lazy"
+                        decoding="async"
+                        />
+                    </button>
                     </div>
                 </nav><!-- #site-navigation -->
             </div>

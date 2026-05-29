@@ -777,12 +777,16 @@ p a, p a:hover, p a:focus, p a:active, p a:visited {
     display: inline-block;
     vertical-align: middle;
 }
+.main-navigation .social-icons,
 .main-navigation .icon-search {
     font-size: 16px;
 }
 .main-navigation .toggle-menu {
     height: 62px;
 }
+.social-icons,
+.social-icons:hover,
+.social-icons:focus,
 .icon-search,
 .icon-search:hover,
 .icon-search:focus,
@@ -793,8 +797,9 @@ p a, p a:hover, p a:focus, p a:active, p a:visited {
     background-color: #fff;
     color: #000;
     border-color: #fff;
+    text-align: center;
+    margin: 0;
 }
-.icon-search,
 .toggle-menu {
     width: 100%;
     text-align: center;
@@ -880,6 +885,7 @@ p a, p a:hover, p a:focus, p a:active, p a:visited {
     font-weight: 400;
 }
 @media only screen and (min-width: 992px) {
+    .main-navigation .social-icons,
     .main-navigation .icon-search {
         height: 72px;
         line-height: 72px;
@@ -1012,7 +1018,6 @@ p a, p a:hover, p a:focus, p a:active, p a:visited {
         cursor: pointer;
         text-align: center;
         display: inline-block;
-        width: 30px;
         height: 40px;
         vertical-align: middle;
     }
