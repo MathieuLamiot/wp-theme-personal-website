@@ -16,7 +16,6 @@ if (!function_exists('business_insights_trigger_custom_css_action')):
      */
     function business_insights_trigger_custom_css_action()
     {
-        global $business_insights_google_fonts;
         $business_insights_enable_banner_overlay = business_insights_get_option('enable_overlay_option');
         $business_insights_enable_slider_overlay = business_insights_get_option('enable_slider_overlay');
         $business_insights_enable_calback_overlay = business_insights_get_option('enable_calback_overlay');
