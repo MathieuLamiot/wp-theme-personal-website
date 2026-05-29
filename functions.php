@@ -146,7 +146,7 @@ function business_insights_scripts()
     wp_style_add_data('business-insights-style', 'rtl', 'replace');
 
     /*inline style*/
-    wp_add_inline_style('business-insights-style', business_insights_trigger_custom_css_action());
+    wp_add_inline_style('business-insights-style', (string) business_insights_trigger_custom_css_action());
 
     $fonts_url = business_insights_fonts_url();
     if (!empty($fonts_url)) {
