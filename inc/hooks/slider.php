@@ -89,7 +89,7 @@ if (!function_exists('mlt_add_permanent_slider_content')) :
                 'post_type'      => 'any',
                 'orderby'        => 'date',
                 'order'          => 'DESC',
-                'posts_per_page' => -1,
+                'posts_per_page' => 3,
             ));
 
             $allTheIDs = array_merge($sorted_variable_query->posts, $about_me_ids);
