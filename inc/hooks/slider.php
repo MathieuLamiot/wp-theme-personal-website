@@ -84,6 +84,7 @@ if (!function_exists('mlt_add_permanent_slider_content')) :
             ));
 
             $sorted_variable_query = new WP_Query(array(
+                'fields'         => 'ids',
                 'post__in'       => array_values($variable_ids),
                 'post_type'      => 'any',
                 'orderby'        => 'date',
