@@ -63,24 +63,44 @@ if (!function_exists('mlt_add_permanent_slider_content')) :
      */
     function mlt_add_permanent_slider_content($variable_slider_content_query)
     {
-
         if (is_front_page()) {
-            $permanent_slider_content_args = array(
-                'fields' => 'ids',
+            $permanent_slider_content_query = new WP_Query(array(
+                'fields'    => 'ids',
                 'post_type' => 'page',
-                'title' => 'About me',
-            );
-            $permanent_slider_content_query = new WP_Query($permanent_slider_content_args);
+                'title'     => 'About me',
+            ));
 
-            //now you got post IDs in $query->posts
-            $allTheIDs = array_merge($permanent_slider_content_query->posts, $variable_slider_content_query->posts,);
+            $webinars_query = new WP_Query(array(
+                'fields'         => 'ids',
+                'post_type'      => 'post',
+                'category_name'  => 'webinars',
+                'posts_per_page' => -1,
+            ));
+
+            $about_me_ids = $permanent_slider_content_query->posts;
+            $variable_ids = array_unique(array_merge(
+                $variable_slider_content_query->posts,
+                $webinars_query->posts,
+            ));
+
+            $sorted_variable_query = new WP_Query(array(
+                'post__in'       => array_values($variable_ids),
+                'post_type'      => 'any',
+                'orderby'        => 'date',
+                'order'          => 'DESC',
+                'posts_per_page' => -1,
+            ));
+
+            $allTheIDs = array_merge($sorted_variable_query->posts, $about_me_ids);
         } else {
             $allTheIDs = $variable_slider_content_query->posts;
         }
-        //new query, using post__in parameter
+
         $merged_query = new WP_Query(array(
-            'post__in' => $allTheIDs,
-            'post_type' => 'any',
+            'post__in'       => $allTheIDs,
+            'post_type'      => 'any',
+            'orderby'        => 'post__in',
+            'posts_per_page' => -1,
         ));
         return $merged_query;
     ?>
